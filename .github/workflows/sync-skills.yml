@@ -1,0 +1,33 @@
+name: sync-skills
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Sync skills from clawdbot
+        run: scripts/sync-skills.sh
+
+      - name: Commit & push if changed
+        run: |
+          if git diff --quiet; then
+            echo "No changes"
+            exit 0
+          fi
+          git config user.name "clawdbot-ci"
+          git config user.email "ci@clawdbot"
+          git add -A
+          git commit -m "sync skills from clawdbot"
+          git push
