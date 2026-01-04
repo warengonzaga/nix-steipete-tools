@@ -19,16 +19,16 @@ These tools are essential for a capable clawdbot instance - screen capture, came
 
 | Tool | What it does |
 |------|--------------|
-| [**summarize**](https://summarize.sh) | Summarize URLs, PDFs, images, audio, YouTube |
-| [**gogcli**](https://gogcli.sh) | Google Workspace CLI (Gmail, Calendar, Drive, Contacts, Sheets, Docs) |
-| [**camsnap**](https://camsnap.ai) | Capture snapshots/clips from RTSP/ONVIF cameras |
-| [**sonoscli**](https://sonoscli.sh) | Control Sonos speakers |
-| [**bird**](https://bird.fast) | X/Twitter CLI (read, search, post) |
-| [**peekaboo**](https://peekaboo.boo) | macOS screen capture + UI automation |
-| **poltergeist** | File watcher with auto-rebuild |
-| [**sag**](https://sag.sh) | ElevenLabs text-to-speech |
-| [**imsg**](https://imsg.to) | iMessage/SMS CLI |
-| [**oracle**](https://askoracle.dev) | Bundle prompts + files for AI queries |
+| [**summarize**](https://github.com/steipete/summarize) | Link → clean text → summary |
+| [**gogcli**](https://github.com/steipete/gogcli) | Google CLI for Gmail, Calendar, Drive, and Contacts |
+| [**camsnap**](https://github.com/steipete/camsnap) | Capture snapshots/clips from RTSP/ONVIF cameras |
+| [**sonoscli**](https://github.com/steipete/sonoscli) | Control Sonos speakers |
+| [**bird**](https://github.com/steipete/bird) | Fast X CLI for tweeting, replying, and reading |
+| [**peekaboo**](https://github.com/steipete/peekaboo) | Lightning-fast macOS screenshots & AI vision analysis |
+| [**poltergeist**](https://github.com/steipete/poltergeist) | Universal file watcher with auto-rebuild |
+| [**sag**](https://github.com/steipete/sag) | Command-line ElevenLabs TTS with mac-style flags |
+| [**imsg**](https://github.com/steipete/imsg) | iMessage/SMS CLI |
+| [**oracle**](https://github.com/steipete/oracle) | Bundle prompts + files for AI queries |
 
 ## Usage (as clawdbot plugins)
 
