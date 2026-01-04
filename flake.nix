@@ -18,6 +18,7 @@
           gogcli = pkgs.callPackage ./nix/pkgs/gogcli.nix {};
           camsnap = pkgs.callPackage ./nix/pkgs/camsnap.nix {};
           sonoscli = pkgs.callPackage ./nix/pkgs/sonoscli.nix {};
+          bird = pkgs.callPackage ./nix/pkgs/bird.nix {};
         }
       );
 
@@ -26,6 +27,7 @@
         gogcli = self.packages.${system}.gogcli;
         camsnap = self.packages.${system}.camsnap;
         sonoscli = self.packages.${system}.sonoscli;
+        bird = self.packages.${system}.bird;
       });
     };
 }
