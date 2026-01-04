@@ -35,7 +35,7 @@ scripts/update-tools.sh
 ```
 
 This script uses GitHub releases directly (not Homebrew) and only edits files when
-values change. Oracle remains manual for now.
+values change. Oracle is auto-updated by deriving its pnpm hash via a build mismatch.
 
 ## Packages (root flake)
 
