@@ -65,7 +65,7 @@ inputs.nix-steipete-tools.packages.aarch64-darwin.peekaboo
 Skills are vendored from [clawdbot/clawdbot](https://github.com/clawdbot/clawdbot) main branch. No pinning - we track latest.
 
 ```bash
-scripts/sync-skills.sh
+go run ./cmd/sync-skills
 ```
 
 Pulls latest main via sparse checkout, only updates files when contents actually change.
@@ -75,7 +75,7 @@ Pulls latest main via sparse checkout, only updates files when contents actually
 Tools track upstream GitHub releases directly (not Homebrew).
 
 ```bash
-scripts/update-tools.sh
+go run ./cmd/update-tools
 ```
 
 Fetches latest release versions/URLs/hashes and updates the Nix expressions. Oracle uses pnpm and auto-derives its hash via build mismatch.

@@ -18,7 +18,7 @@ jobs:
           fetch-depth: 0
 
       - name: Sync skills from clawdbot
-        run: scripts/sync-skills.sh
+        run: go run ./cmd/sync-skills
 
       - name: Commit & push if changed
         run: |

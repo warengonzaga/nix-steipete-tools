@@ -23,7 +23,7 @@ jobs:
       - name: Update tool versions and hashes
         env:
           GH_TOKEN: ${{ github.token }}
-        run: scripts/update-tools.sh
+        run: go run ./cmd/update-tools
 
       - name: Commit & push if changed
         run: |
