@@ -2,11 +2,11 @@
 
 stdenv.mkDerivation {
   pname = "imsg";
-  version = "0.3.0";
+  version = "0.4.0";
 
   src = fetchurl {
-    url = "https://github.com/steipete/imsg/releases/download/v0.3.0/imsg-macos.zip";
-    hash = "sha256-M+lmuPPkACelr51zTkLfu2Zfpew4uFIIrRXTpCXo2eU=";
+    url = "https://github.com/steipete/imsg/releases/download/v0.4.0/imsg-macos.zip";
+    hash = "sha256-0OXjM+6IGS1ZW/7Z7s5g417K0DABRZZtWtJ0WMM+QHs=";
   };
 
   nativeBuildInputs = [ unzip ];
