@@ -19,18 +19,18 @@ let
 in
 stdenv.mkDerivation (finalAttrs: {
   pname = "oracle";
-  version = "0.8.4";
+  version = "0.8.5";
 
   srcTarball = fetchurl {
-    url = "https://github.com/steipete/oracle/releases/download/v0.8.4/oracle-0.8.4.tgz";
-    hash = "sha256-wE4nwQIHBmJFT+WOiwFU3SIXd918X7DkjMt2rOG2mFU=";
+    url = "https://github.com/steipete/oracle/releases/download/v0.8.5/oracle-0.8.5.tgz";
+    hash = "sha256-MSb1+5wEHK38iq+yob7Tz7xov0Wh9zHcmXGs/l2KdMA=";
   };
 
   lockSrc = fetchFromGitHub {
     owner = "steipete";
     repo = "oracle";
     rev = "v0.8.4";
-    hash = "sha256-7SSlMbp0se1+4gg9IDt06ASyfCgvgF2fZDqFPl88EHc=";
+    hash = "sha256-q1l3IcVAj7Gb8Lp0JzQakLRg2AlVrJniMBHRwxKQVbM=";
   };
 
   srcPatched = stdenv.mkDerivation {
@@ -71,7 +71,7 @@ PY
     pname = finalAttrs.pname;
     version = finalAttrs.version;
     src = finalAttrs.srcPatched;
-    hash = "sha256-7q5lStI8gfrz6+X4U1ONm3CBufGDVDr/w/aRGMeK88A=";
+    hash = "sha256-Tmwe55l4QMzXsO7F1kUSnGuZjkuMtDORNtqKnWZ/HrA=";
     fetcherVersion = 3;
   });
 
