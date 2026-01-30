@@ -1,5 +1,5 @@
 {
-  description = "clawdbot plugin: camsnap";
+  description = "openclaw plugin: camsnap";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs?rev=16c7794d0a28b5a37904d55bcca36003b9109aaa&narHash=sha256-fFUnEYMla8b7UKjijLnMe%2BoVFOz6HjijGGNS1l7dYaQ%3D";
@@ -14,7 +14,7 @@
     in {
       packages.${system} = if camsnap == null then {} else { camsnap = camsnap; };
 
-      clawdbotPlugin = if camsnap == null then null else {
+      openclawPlugin = if camsnap == null then null else {
         name = "camsnap";
         skills = [ ./skills/camsnap ];
         packages = [ camsnap ];

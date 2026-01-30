@@ -1,5 +1,5 @@
 {
-  description = "clawdbot plugin: poltergeist";
+  description = "openclaw plugin: poltergeist";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs?rev=16c7794d0a28b5a37904d55bcca36003b9109aaa&narHash=sha256-fFUnEYMla8b7UKjijLnMe%2BoVFOz6HjijGGNS1l7dYaQ%3D";
@@ -14,7 +14,7 @@
     in {
       packages.${system} = if poltergeist == null then {} else { poltergeist = poltergeist; };
 
-      clawdbotPlugin = if poltergeist == null then null else {
+      openclawPlugin = if poltergeist == null then null else {
         name = "poltergeist";
         skills = [ ./skills/poltergeist ];
         packages = [ poltergeist ];

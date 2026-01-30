@@ -1,15 +1,15 @@
 # nix-steipete-tools
 
-> Core tools for clawdbot. Batteries included. Always fresh.
+> Core tools for openclaw. Batteries included. Always fresh.
 
-Nix packaging for [Peter Steinberger's](https://github.com/steipete) tools, with per-tool clawdbot plugins. Part of the [nix-clawdbot](https://github.com/clawdbot/nix-clawdbot) ecosystem.
+Nix packaging for [Peter Steinberger's](https://github.com/steipete) tools, with per-tool openclaw plugins. Part of the [nix-openclaw](https://github.com/openclaw/nix-openclaw) ecosystem.
 
 Darwin/aarch64 plus Linux (x86_64/aarch64) for tools that ship Linux builds.
 On Linux, `summarize` is built from source (Node 22 + pnpm) since upstream only ships a macOS Bun binary.
 
 ## Why this exists
 
-These tools are essential for a capable clawdbot instance - screen capture, camera access, TTS, messaging. Packaging them as Nix flakes with clawdbot plugin metadata means:
+These tools are essential for a capable openclaw instance - screen capture, camera access, TTS, messaging. Packaging them as Nix flakes with openclaw plugin metadata means:
 
 - **Reproducible**: Pinned versions, no Homebrew drift
 - **Declarative**: Add a plugin, `home-manager switch`, done
@@ -31,15 +31,15 @@ These tools are essential for a capable clawdbot instance - screen capture, came
 | [**imsg**](https://github.com/steipete/imsg) | iMessage/SMS CLI |
 | [**oracle**](https://github.com/steipete/oracle) | Bundle prompts + files for AI queries |
 
-## Usage (as clawdbot plugins)
+## Usage (as openclaw plugins)
 
-Each tool is a subflake under `tools/<tool>/` exporting `clawdbotPlugin`. Point your nix-clawdbot config at the tool you want:
+Each tool is a subflake under `tools/<tool>/` exporting `openclawPlugin`. Point your nix-openclaw config at the tool you want:
 
 ```nix
-programs.clawdbot.plugins = [
-  { source = "github:clawdbot/nix-steipete-tools?dir=tools/camsnap"; }
-  { source = "github:clawdbot/nix-steipete-tools?dir=tools/peekaboo"; }
-  { source = "github:clawdbot/nix-steipete-tools?dir=tools/summarize"; }
+programs.openclaw.plugins = [
+  { source = "github:openclaw/nix-steipete-tools?dir=tools/camsnap"; }
+  { source = "github:openclaw/nix-steipete-tools?dir=tools/peekaboo"; }
+  { source = "github:openclaw/nix-steipete-tools?dir=tools/summarize"; }
 ];
 ```
 
@@ -53,7 +53,7 @@ Each plugin bundles:
 If you just want the binaries without the plugin wrapper:
 
 ```nix
-inputs.nix-steipete-tools.url = "github:clawdbot/nix-steipete-tools";
+inputs.nix-steipete-tools.url = "github:openclaw/nix-steipete-tools";
 
 # Then use:
 inputs.nix-steipete-tools.packages.aarch64-darwin.camsnap
@@ -68,7 +68,7 @@ inputs.nix-steipete-tools.packages.x86_64-linux.summarize
 
 ## Skills syncing
 
-Skills are vendored from [clawdbot/clawdbot](https://github.com/clawdbot/clawdbot) main branch. No pinning - we track latest.
+Skills are vendored from [openclaw/openclaw](https://github.com/openclaw/openclaw) main branch. No pinning - we track latest.
 
 ```bash
 go run ./cmd/sync-skills
@@ -90,7 +90,7 @@ Fetches latest release versions/URLs/hashes and updates the Nix expressions. Ora
 
 | Workflow | Schedule | What it does |
 |----------|----------|--------------|
-| **sync-skills** | Every 30 min | Pulls latest skills from clawdbot main |
+| **sync-skills** | Every 30 min | Pulls latest skills from openclaw main |
 | **update-tools** | Every 10 min | Checks for new tool releases |
 | **Garnix** | On push | Builds all packages via `checks.*` (darwin + linux) |
 
